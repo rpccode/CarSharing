@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="10"  fx:controller="com.mycompany.carsharing.controller.Estado_vehiculoController">
+    <TableView fx:id="tablaVehiculos" editable="true">
+        <columns>
+            <TableColumn text="Vehículo" fx:id="vehiculoCol"/>
+            <TableColumn text="Estado" fx:id="estadoCol"/>
+            <TableColumn text="Hora estimada de devolución" fx:id="devolucionCol"/>
+        </columns>
+    </TableView>
+    <Button text="Actualizar Estado" onAction="#actualizarEstado"/>
+    <Label fx:id="statusLabel"/>
+</VBox>

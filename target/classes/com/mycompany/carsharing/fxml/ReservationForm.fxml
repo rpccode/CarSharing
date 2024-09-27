@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.collections.FXCollections?>
+
+<!-- El controlador se define aquí -->
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.carsharing.controller.ReservationFormController" hgap="10" vgap="10" >
+    
+    <!-- Seleccionar Vehículo -->
+    <Label text="Seleccionar Vehículo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <ComboBox fx:id="vehicleComboBox" promptText="Seleccione un vehículo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+
+    <!-- Fecha y Hora de Inicio -->
+    <Label text="Fecha y Hora de Inicio:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField fx:id="startTimePicker" promptText="HH:MM" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <!-- Fecha y Hora de Finalización -->
+    <Label text="Fecha y Hora de Finalización:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField fx:id="endTimePicker" promptText="HH:MM" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <!-- Botones -->
+    <Button fx:id="checkAvailabilityButton" text="Verificar Disponibilidad" onAction="#checkAvailability" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Button fx:id="reserveButton" text="Reservar" onAction="#makeReservation" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <!-- Etiqueta de estado -->
+    <Label fx:id="statusLabel" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+</GridPane>

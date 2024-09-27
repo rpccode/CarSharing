@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.carsharing.HomeController">
+    <!-- Menú de navegación lateral -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 10;">
+            <Label text="Menú" style="-fx-font-size: 16px; -fx-text-fill: white;"/>
+            <Button text="Reservar Vehículo" fx:id="btnReservar" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Button text="Monitorear Vehículo" fx:id="btnMonitorear" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Button text="Estado del Vehículo" fx:id="btnEstado" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Button text="Procesar Pagos" fx:id="btnPagos" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Button text="Notificaciones" fx:id="btnNotificaciones" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Button text="Historial de Reservas" fx:id="btnHistorial" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+        </VBox>
+    </left>
+
+    <!-- Área principal para mostrar contenido dinámico -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 10;">
+            <Label text="Bienvenido al Sistema de Gestión de Reservas de Vehículos" style="-fx-font-size: 18px;"/>
+        </StackPane>
+    </center>
+</BorderPane>
