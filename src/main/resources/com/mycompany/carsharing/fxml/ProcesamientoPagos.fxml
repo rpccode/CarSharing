@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.carsharing.controller.ProcesamientoPagosController">
+    
+    
+    <center>
+        <TableView fx:id="tablaReservas">
+            <columns>
+                <TableColumn fx:id="vehiculoCol" text="Vehículo"/>
+                <TableColumn fx:id="usuarioCol" text="Usuario"/>
+                <TableColumn fx:id="montoCol" text="Monto a Pagar"/>
+                <TableColumn fx:id="accionCol" text="Acción"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <right>
+        <VBox spacing="10">
+            <VBox spacing="10">
+                <HBox spacing="10">
+                    <Label text="Método de Pago:"/>
+                    <ComboBox fx:id="metodoPagoComboBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Tarjeta de Crédito"/>
+                                <String fx:value="Tarjeta de Débito"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <Label fx:id="totalLabel" text="Total a Pagar: $0.00"/>
+                <Button fx:id="procesarPagoButton" text="Procesar Pago Total"/>
+            </VBox>
+            <Label text="Factura:"/>
+            <TextArea fx:id="facturaTextArea" prefRowCount="10" editable="false"/>
+        </VBox>
+    </right>
+</BorderPane>

@@ -48,7 +48,7 @@ public class MonitoreoVehiculoController {
             // Update map
             StringBuilder script = new StringBuilder("var markers = [");
             for (Vehiculo v : vehiculos) {
-                script.append(String.format("{lat: %f, lng: %f},", v.getLatitud(), v.getLongitud()));
+                script.append(String.format("{lat: %f, lng: %f},", v.getLatitude(), v.getLongitude()));
             }
             script.append("];");
             script.append("updateMarkers(markers);");

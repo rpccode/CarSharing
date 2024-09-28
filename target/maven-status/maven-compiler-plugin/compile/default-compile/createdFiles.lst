@@ -1,10 +1,13 @@
 com\mycompany\carsharing\controller\MonitoreoVehiculoController.class
 com\mycompany\carsharing\model\Vehiculo.class
 com\mycompany\carsharing\App.class
+com\mycompany\carsharing\model\Reserva.class
 com\mycompany\carsharing\HomeController.class
 com\mycompany\carsharing\controller\Estado_vehiculoController$1.class
 com\mycompany\carsharing\controller\ReservationFormController.class
+com\mycompany\carsharing\controller\ProcesamientoPagosController.class
 com\mycompany\carsharing\model\DatabaseManager.class
 module-info.class
 com\mycompany\carsharing\controller\Estado_vehiculoController$1$1.class
 com\mycompany\carsharing\controller\Estado_vehiculoController.class
+com\mycompany\carsharing\controller\ReservationFormController$1.class

@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.util.Callback;
 /**
  * FXML Controller class
@@ -39,8 +40,10 @@ public class Estado_vehiculoController  {
     @FXML
     public void initialize() {
         // Configurar las columnas
-        vehiculoCol.setCellValueFactory(cellData -> cellData.getValue().idProperty());
-        estadoCol.setCellValueFactory(cellData -> cellData.getValue().estadoProperty());
+        vehiculoCol.setCellValueFactory(cellData -> {
+            return new SimpleStringProperty(String.valueOf(cellData.getValue().getId()));
+        });
+        estadoCol.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
         estadoCol.setCellFactory(createComboBoxCellFactory());
         devolucionCol.setCellValueFactory(cellData -> cellData.getValue().tiempoEstimadoRetornoProperty());
 
@@ -50,7 +53,9 @@ public class Estado_vehiculoController  {
 
     private void cargarDatos() {
         List<Vehiculo> vehiculos = dbManager.getVehiculos();
+        
         ObservableList<Vehiculo> observableVehiculos = FXCollections.observableArrayList(vehiculos);
+        System.out.println(observableVehiculos);
         tablaVehiculos.setItems(observableVehiculos);
     }
 
@@ -80,7 +85,7 @@ public class Estado_vehiculoController  {
                                 comboBox.getItems().addAll("Disponible", "Reservado", "En uso");
                                 comboBox.setOnAction(event -> {
                                     Vehiculo vehiculo = getTableView().getItems().get(getIndex());
-                                    vehiculo.setEstado(comboBox.getValue());
+                                    vehiculo.setStatus(comboBox.getValue());
                                 });
                             }
                             comboBox.setValue(item);

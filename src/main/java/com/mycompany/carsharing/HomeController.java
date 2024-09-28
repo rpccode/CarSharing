@@ -29,7 +29,7 @@ public class HomeController implements Initializable {
         btnReservar.setOnAction(event -> showView("ReservationForm.fxml"));
         btnMonitorear.setOnAction(event -> showView("MonitoreoVehiculo.fxml"));
         btnEstado.setOnAction(event -> showView("estado_vehiculo.fxml"));
-        btnPagos.setOnAction(event -> showView("estado_vehiculo.fxml"));
+        btnPagos.setOnAction(event -> showView("ProcesamientoPagos.fxml"));
         btnNotificaciones.setOnAction(event -> showView("estado_vehiculo.fxml"));
         btnHistorial.setOnAction(event -> showView("estado_vehiculo.fxml"));
     }

@@ -1,48 +1,86 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.carsharing.model;
 
-/**
- *
- * @author rperez
- */
 public class Vehiculo {
-    private final String id;
-    private String estado;
-    private final String tiempoEstimadoRetorno;
-    private double latitud;
-    private double longitud;
+    private final int id;
+    private String licensePlate;
+    private String brand;
+    private String model;
+    private String status;
+    private double latitude;
+    private double longitude;
+    private String tiempoEstimadoRetorno;
 
-    public Vehiculo(String id, String estado, String tiempoEstimadoRetorno) {
+    public Vehiculo(int id, String licensePlate, String brand, String model, String status, double latitude, double longitude) {
         this.id = id;
-        this.estado = estado;
+        this.licensePlate = licensePlate;
+        this.brand = brand;
+        this.model = model;
+        this.status = status;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        
+    }
+     public Vehiculo(int id, String status, String tiempoEstimadoRetorno, double latitud, double longitud) {
+        this.id = id;
+        this.status = status;
+        this.tiempoEstimadoRetorno = tiempoEstimadoRetorno;
+        this.latitude = latitud;
+        this.longitude = longitud;
+    }
+     
+       public Vehiculo(int id, String status,String brand, String model, String tiempoEstimadoRetorno) {
+        this.id = id;
+        this.status = status;
+          this.brand = brand;
+        this.model = model;
         this.tiempoEstimadoRetorno = tiempoEstimadoRetorno;
     }
 
-    public javafx.beans.property.StringProperty idProperty() {
-        return new javafx.beans.property.SimpleStringProperty(id);
+        @Override
+    public String toString() {
+        return id + " - " + brand + " - " + model ; // Personalización de cómo se muestra el vehículo
     }
 
-    public javafx.beans.property.StringProperty estadoProperty() {
-        return new javafx.beans.property.SimpleStringProperty(estado);
-    }
+    // Getters and setters
+    public int getId() { return id; }
+    public String getLicensePlate() { return licensePlate; }
+    public void setLicensePlate(String licensePlate) { this.licensePlate = licensePlate; }
 
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    public double getLatitude() { return latitude; }
+    public void setLatitude(double latitude) { this.latitude = latitude; }
+
+    public double getLongitude() { return longitude; }
+    public void setLongitude(double longitude) { this.longitude = longitude; }
+
+    // Properties for JavaFX binding
+    public javafx.beans.property.StringProperty licensePlateProperty() {
+        return new javafx.beans.property.SimpleStringProperty(licensePlate);
+    }
     public javafx.beans.property.StringProperty tiempoEstimadoRetornoProperty() {
         return new javafx.beans.property.SimpleStringProperty(tiempoEstimadoRetorno);
     }
-     public double getLatitud() {
-        return latitud;
+    public javafx.beans.property.IntegerProperty idProperty() {
+        return new javafx.beans.property.SimpleIntegerProperty(id);
+    } 
+
+    public javafx.beans.property.StringProperty brandProperty() {
+        return new javafx.beans.property.SimpleStringProperty(brand);
     }
 
-    public double getLongitud() {
-        return longitud;
+    public javafx.beans.property.StringProperty modelProperty() {
+        return new javafx.beans.property.SimpleStringProperty(model);
     }
 
-    public String getId() { return id; }
-    public String getEstado() { return estado; }
-    public String getTiempoEstimadoRetorno() { return tiempoEstimadoRetorno; }
-
-    public void setEstado(String estado) { this.estado = estado; }
+    public javafx.beans.property.StringProperty statusProperty() {
+        return new javafx.beans.property.SimpleStringProperty(status);
+    }
 }
